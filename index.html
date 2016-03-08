@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <!--$("h1").css("hey" + name);-->
-    <meta charset="UTF-8">
-    <title>Banner Generator</title>
-<script src="//code.jquery.com/jquery-1.12.0.min.js">
-    $(function(){
-    var name = $("#name").val();
-$("#button").click({
-    
-});  
-});
-</script>
-  </head>
-  <body>
+
+<head>
+  <!--$("h1").css("hey" + name);-->
+  <meta charset="UTF-8">
+  <title>Banner Generator</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js">
+  </script>
+  <script>
+    $(function() {
+      $("button").click(function() {
+        var userName = $("#name").val();
+        $("h1").html("Hello, " + userName);
+     
+      var userColor = $("#color").val();
+        $("#backgroundh1").css("background-color", userColor);
+      
+       var userColor2 = $("#color2").val();
+       $("#fontColor").css("color", userColor2);x
+      });
+    });
+  </script>
+</head>
+
+<body>
+  
+  <style type="text/css">
+    #backgroundh1{
+      height:500px;
+      width:800px;
+    }
+  </style>
   <form>
-      <p >What's your name? </p>
-      <input type="text" name="name" id = "name"/>
-      <p>What's your favorite color?</p>
-      <input type="text" name="favorite_c"  id = "color"/>
-      <p>What's your favorite Country?</p>
-      <input type="radio" name="Favorite_C" id = "m"/>Mexico
-      <input type="radio" name="Favorite_C" id = "j"/>Japan
-      <input type="radio" name="Favorite_C" id = "c"/>China
-      <input type="radio" name="Favorite_C" id = "t"/>Turkey
-      <input type="radio" name="Favorite_C" id = "a"/>'merica
+    <p>What's your name? </p>
+    <input type="text" id="name" />
+    <p>What's your favorite color?</p>
+    <input type="color" id="color" value ="#D3B078" />
+    
+    <p>Another one</p>
+  <input id = "color2" type = "color" value = "#3F3731">  
+    
+    <p>What's your favorite Country?</p>
+    <input type="radio" id="m" />Mexico
+    <input type="radio" id="j" />Japan
+    <input type="radio" id="c" />China
+    <input type="radio" id="t" />Turkey
+    <input type="radio" id="a" />'merica
   </form>
-  <button id = "button">Submit</button>
-  
-  
-  <h1></h1>
-  </body>
+  <button id="button">Submit</button>
+
+  <div id="backgroundh1">
+ <center> <h1 id = "fontColor"></h1></center>
+  </div>
+</body>
+
 </html>
