@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <!--$("h1").css("hey" + name);-->
   <meta charset="UTF-8">
   <title>Banner Generator</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js">
@@ -12,46 +10,72 @@
       $("button").click(function() {
         var userName = $("#name").val();
         $("h1").html("Hello, " + userName);
-     
-      var userColor = $("#color").val();
+
+        var userColor = $("#color").val();
         $("#backgroundh1").css("background-color", userColor);
-      
-       var userColor2 = $("#color2").val();
-       $("#fontColor").css("color", userColor2);
+
+        var userColor2 = $("#color2").val();
+        $("#fontColor").css("color", userColor2);
+        
+        var userCountry = $('#country').val();
+        $('#backgroundh1').css("background-image", 'url('+userCountry+')');
       });
+
+    /*  var userConM = "mFlag";
+      var userConA = "aFlag";
+      var userConJ = "jFlag";
+      var userConC = "cFlag";
+      var userConT = "tFlag";*/
+ 
+
+
     });
   </script>
 </head>
 
 <body>
-  
+
   <style type="text/css">
-    #backgroundh1{
-      height:500px;
-      width:800px;
+    #backgroundh1 {
+      height: 500px;
+      width: 800px;
+      
     }
   </style>
   <form>
     <p>What's your name? </p>
     <input type="text" id="name" />
     <p>What's your favorite color?</p>
-    <input type="color" id="color" value ="#D3B078" />
-    
+    <input type="color" id="color" value="#D3B078" />
+
     <p>Another one</p>
-  <input id = "color2" type = "color" value = "#3F3731">  
-    
+    <input id="color2" type="color" value="#3F3731">
+
     <p>What's your favorite Country?</p>
-    <input type="radio" id="m" />Mexico
-    <input type="radio" id="j" />Japan
-    <input type="radio" id="c" />China
-    <input type="radio" id="t" />Turkey
-    <input type="radio" id="a" />'merica
+    <select id ="country">
+      <option id = "m" value = "MexicoFlag.jpg">Mexico</option>
+      <option id = "j" value = "JapanFlag.png">Japan</option>
+      <option id = "c"  value = "ChinaFlag.gif" >China</option>
+      <option id = "t" value = "TurkeyFlag.gif">Turkey</option>
+      <option id = "a" value = "American flag.gif">America</option>
+    </select>
+
   </form>
+  <br>
+  <br>
   <button id="button">Submit</button>
 
   <div id="backgroundh1">
- <center> <h1 id = "fontColor"></h1></center>
+    <center>
+      <h1 id="fontColor"></h1></center>
   </div>
+
+ <!-- <img src="American flag.gif"  id="aFlag">
+  <img src="ChinaFlag.gif"  id="cFlag">
+  <img src="JapanFlag.png"  id="jFlag">
+  <img src="MexicoFlag.jpg"  id="mFlag">
+  <img src="TurkeyFlag.gif"  id="tFlag">-->
 </body>
 
 </html>
+<!--style="display:none; position:fixed; height:100%; width:100%; "-->
