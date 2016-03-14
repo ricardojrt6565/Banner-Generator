@@ -1,35 +1,79 @@
-<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title>Banner Generator</title> <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'> <script src="//code.jquery.com/jquery-1.12.0.min.js"> </script> <script> $(function() {
-  $("button").click(function() {
-    var userName=$("#name").val();
-    $("h1").html("Hello, " + userName + " you're awesome.");
-    var userColor=$("#color").val();
-    $("#fontColor").css("background-color", userColor);
-    var userColor2=$("#color2").val();
-    $("#fontColor").css("color", userColor2);
-    var userCountry=$('#country').val();
-    $('#backgroundh1').css("background-image", 'url(' + userCountry + ')');
-  }
-  );
-}
+<!DOCTYPE html>
+<html>
 
-);
-</script> </head> <body> <p id="sig" style="font-family: 'Allura', cursive;text-shadow:3px 4px 5px;">Ricardo Tlatelpa</p> <style type="text/css"> #backgroundh1 {
-  height: 500px;
-  width: 800px;
-  background-size: contain;
-}
+<head>
+  <meta charset="UTF-8">
+  <title>Banner Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js">
+  </script>
+  <script>
+    $(function() {
+        $("button").click(function() {            
+        
+          var userName = $("#name").val();   /*So every variable created selects data; what the user writes about*/
+          $("h1").html("Hello, " + userName + " you're awesome.");
+                                                                /*with the data collected the computer will put it in a empty div/h1 tag*/
+          var userColor = $("#color").val();
+          $("#fontColor").css("background-color", userColor); /*Most of things that are being manipulated have to do with the css, the only thing that has to do with the html are 
+                                                                        the short strings that say "hello you're awesome*/
+        
+          var userColor2 = $("#color2").val();
+          $("#fontColor").css("color", userColor2);
+        
+        
+          var userCountry = $('#country').val();
+          $('#backgroundh1').css("background-image", 'url(' + userCountry + ')');
+        });
+      }
 
-#fontColor {
-  background-size: contain;
-  height: 25px;
-  width: 500px;
-}
+    );
+  </script>
+</head>
 
-#sig {
-  font-size: 35px;
-}
+<body>
+  <p id="sig" style="font-family: 'Allura', cursive;text-shadow:3px 4px 5px;">Ricardo Tlatelpa</p>
+  <style type="text/css">
+    #backgroundh1 {
+      height: 500px;
+      width: 800px;
+      background-size: contain;/*It was frustrating in making the image relative to the div but "contain" helped a ton*/
+    }
+    
+    #fontColor {
+      background-size: contain;
+      height: 25px;
+      width: 500px;
+    }
+    
+    #sig {
+      font-size: 35px;
+    }
+  </style>
+  <form>
+    <p>What's your name? </p>
+    <input type="text" id="name" />
+    <p>What's your favorite color?</p>
+    <input type="color" id="color" value="#FF0000" />
+    <p>Font Color</p>
+    <input id="color2" type="color" value="#3F3731">
+    <p>What's your favorite Country?</p>
+    <select id="country">
+      <option id="m" value="MexicoFlag.jpg">Mexico</option>
+      <option id="j" value="JapanFlag.png">Japan</option>
+      <option id="c" value="ChinaFlag.gif">China</option>  <!--Theese are just the options that have the value of an image
+                                                                I didn't know you could give an option a value of an image but it worked smoothly-->
+      <option id="t" value="TurkeyFlag.gif">Turkey</option>
+      <option id="a" value="AmericanFlag.gif">America</option>
+    </select>
+  </form>
+  <br>
+  <br>
+  <button id="button">Submit</button>
+  <div id="backgroundh1">
+    <center>
+      <h1 id="fontColor" style="padding:10px; text-align:center;"></h1> </center>
+  </div>
+</body>
 
-</style> <form> <p>What's your name? </p>
- <input type="text" id="name" /> <p>What's your favorite color?</p>
- <input type="color" id="color" value="#FF0000" /> <p>Font Color</p> <input id="color2" type="color" value="#3F3731"> <p>What's your favorite Country?</p>
- <select id="country"> <option id="m" value="MexicoFlag.jpg">Mexico</option> <option id="j" value="JapanFlag.png">Japan</option> <option id="c" value="ChinaFlag.gif">China</option> <option id="t" value="TurkeyFlag.gif">Turkey</option> <option id="a" value="AmericanFlag.gif">America</option> </select> </form> <br> <br> <button id="button">Submit</button> <div id="backgroundh1"> <center> <h1 id="fontColor" style="padding:10px; text-align:center;"></h1> </center> </div> </body> </html> 
+</html>
